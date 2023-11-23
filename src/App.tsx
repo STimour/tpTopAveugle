@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Timer from './components/Timer'
 import Button from './components/Button' 
 
+
+
 import './App.css';
 
 function App() {
@@ -20,11 +22,14 @@ function App() {
     }
   };
 
-  const timeWithStartTime = startTime.getTime()
+  
+
 
   return (
     <div className="App">
-      <Timer numberAleat={targerTime}  timeToWin={timeWithStartTime} />
+      <Timer numberAleat={targerTime}/>
+      
+      <Button onStart={()=> handleStart()} onClick={() => handleButtonClick}/>
     </div>
   );
 }

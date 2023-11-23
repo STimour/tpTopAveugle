@@ -1,4 +1,3 @@
-import { useState } from "react"
 import "../App.css"
 
 type AleatTimer = {
@@ -14,11 +13,15 @@ const Timer = (props: AleatTimer) => {
     return (
         <div className="timer">
 
-            <h1>
+            <p>
                Estimez : {numberAleat}
+            </p>
+            <p>
                Vous avez clické à {userClickTimeAsNumber}
+            </p>
+            <p>
                Il fallait clicker à {timeToWin}
-            </h1> 
+            </p> 
 
         </div>
     )

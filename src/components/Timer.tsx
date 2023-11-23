@@ -2,13 +2,11 @@ import "../App.css"
 
 type AleatTimer = {
     numberAleat: number
-    timeToWin: number
-    userClickTimeAsNumber: number
 }
 
 
 const Timer = (props: AleatTimer) => {
-    const {numberAleat, timeToWin, userClickTimeAsNumber} = props
+    const {numberAleat} = props
 
     return (
         <div className="timer">
@@ -16,12 +14,7 @@ const Timer = (props: AleatTimer) => {
             <p>
                Estimez : {numberAleat}
             </p>
-            <p>
-               Vous avez clické à {userClickTimeAsNumber}
-            </p>
-            <p>
-               Il fallait clicker à {timeToWin}
-            </p> 
+        
 
         </div>
     )

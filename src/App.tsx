@@ -24,11 +24,12 @@ function App() {
 
   
 
-  const timeWithStartTime = startTime.getTime()
-  const clickedTime = endTime.getTime()
+
   return (
     <div className="App">
-      <Timer numberAleat={targerTime} userClickTimeAsNumber={clickedTime} timeToWin={timeWithStartTime} />
+      <Timer numberAleat={targerTime}/>
+      
+      <Button onStart={()=> handleStart()} onClick={() => handleButtonClick}/>
     </div>
   );
 }

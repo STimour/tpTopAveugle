@@ -5,26 +5,33 @@ import Button from './components/Button'
 import './App.css';
 
 function App() {
-  const [startTime, setStartTime] = useState<Date>(new Date());
-  const [endTime, setEndTime] = useState<Date>(new Date());
+  const [startTime, setStartTime] = useState<number | null>(null);
+  const [endTime, setEndTime] = useState<number | null>(null);
 
-  const targerTime = Math.floor(Math.random() * 6) + 10; 
-  
   const handleStart = () => {
-    setStartTime(new Date());
+    setStartTime(Date.now());
   };
 
   const handleButtonClick = () => {
     if (startTime !== null) {
-      setEndTime(new Date());
+      setEndTime(Date.now());
     }
   };
 
-  const timeWithStartTime = startTime.getTime()
+  const calculateError = () => {
+    if (startTime !== null && endTime !== null) {
+      const targetTime = 12; // Durée visée en secondes
+      const elapsedTime = Math.abs((endTime - startTime) / 1000);
+      return Math.abs(targetTime - elapsedTime);
+    }
+    return null;
+  };
 
   return (
     <div className="App">
-      <Timer numberAleat={targerTime}  timeToWin={timeWithStartTime} />
+      {/* <Timer numberAleat={12} userClickTimeAsNumber={() => setEndTime(Date.now())} /> */}
+      <Button onStart={handleStart} onClick={handleButtonClick} />
+      {/* <Result error={calculateError()} /> */}
     </div>
   );
 }

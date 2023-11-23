@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Timer from './components/Timer'
-import Button from './components/Button' 
-
+import Button from './components/Button';
 import './App.css';
 
 function App() {
@@ -20,7 +18,8 @@ function App() {
 
   const calculateError = () => {
     if (startTime !== null && endTime !== null) {
-      const targetTime = 12; // Durée visée en secondes
+      // Générer une durée aléatoire entre 10 et 15 secondes
+      const targetTime = Math.floor(Math.random() * 6) + 10; /
       const elapsedTime = Math.abs((endTime - startTime) / 1000);
       return Math.abs(targetTime - elapsedTime);
     }
@@ -29,7 +28,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Timer numberAleat={12} userClickTimeAsNumber={() => setEndTime(Date.now())} /> */}
       <Button onStart={handleStart} onClick={handleButtonClick} />
       {/* <Result error={calculateError()} /> */}
     </div>

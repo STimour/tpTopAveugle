@@ -19,7 +19,7 @@ function App() {
   const calculateError = () => {
     if (startTime !== null && endTime !== null) {
       // Générer une durée aléatoire entre 10 et 15 secondes
-      const targetTime = Math.floor(Math.random() * 6) + 10; /
+      const targetTime = Math.floor(Math.random() * 6) + 10; 
       const elapsedTime = Math.abs((endTime - startTime) / 1000);
       return Math.abs(targetTime - elapsedTime);
     }

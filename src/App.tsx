@@ -9,7 +9,7 @@ import Result from './Componant/Result'
 import './App.css';
 
 function App() {
-  const [startTime, setStartTime] = useState<Date | 0>(0);
+  const [startTime, setStartTime] = useState<Date | null>(null);
   
   const [endTime, setEndTime] = useState<Date>(new Date());
 
@@ -19,7 +19,7 @@ function App() {
   const targerTime = Math.floor(Math.random() * 6) + 10; 
   
   const handleStart = () => {
-    setStartTime(new Date);
+    setStartTime(new Date());
   };
 
   const handleButtonClick = () => {

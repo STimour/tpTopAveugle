@@ -15,10 +15,13 @@ function App() {
 
   const [targerTime, setTargetTime] = useState(Number)
 
+  const [timeToWin, setTimeToWin] = useState('')
+
   const handleStart = () => {
     setStartTime(new Date());
     const nombreAleat = Math.floor(Math.random() * 16) + 5;
     setTargetTime(nombreAleat)
+    setTimeToWin(new Date(Number(startTime) + targerTime * 1000).toLocaleTimeString())
   };
 
   const handleButtonClick = () => {
@@ -26,7 +29,7 @@ function App() {
       setStartTime(null)
   };
 
-  const timeToWin = Number(startTime) + targerTime
+  
 
   return (
     <div className="App">

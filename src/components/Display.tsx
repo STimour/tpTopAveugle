@@ -1,6 +1,6 @@
 type Resultat = {
     numberAleat: number,
-    timeToWin: number
+    timeToWin: string
 }
 
 const Display = (props: Resultat) => {

@@ -13,13 +13,12 @@ function App() {
   
   const [endTime, setEndTime] = useState<Date>(new Date());
 
+  const [targerTime, setTargetTime] = useState(Number)
 
-
-
-  const targerTime = Math.floor(Math.random() * 6) + 10; 
-  
   const handleStart = () => {
     setStartTime(new Date());
+    const nombreAleat = Math.floor(Math.random() * 16) + 5;
+    setTargetTime(nombreAleat)
   };
 
   const handleButtonClick = () => {

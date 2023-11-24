@@ -1,4 +1,11 @@
-const Display = () => {
+type Resultat = {
+    numberAleat: number,
+    timeToWin: number
+}
+
+const Display = (props: Resultat) => {
+    const {numberAleat, timeToWin} = props
+          
     return (
         <div className="affichage">
             <p>Objectif : {numberAleat}</p>

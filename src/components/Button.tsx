@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 interface ButtonProps {
   onStart: () => void;
-  onClick: () => void;
+  onEnd: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ onStart, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ onStart, onEnd }) => {
   const [started, setStarted] = useState(false);
 
   const handleClick = () => {
@@ -13,7 +13,8 @@ const Button: React.FC<ButtonProps> = ({ onStart, onClick }) => {
       onStart();
       setStarted(true);
     } else {
-      onClick();
+      onEnd();
+      setStarted(false)
     }
   };
 

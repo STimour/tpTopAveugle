@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+.startButton {
+  background-color: green;
+  color: white;
+ 
+}
+
+
+.clickButton {
+  background-color: blue;
+  color: white;
+ 
+}

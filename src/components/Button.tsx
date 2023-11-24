@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import App from '../App';
 
 interface ButtonProps {
   onStart: () => void;
@@ -14,11 +15,15 @@ const Button: React.FC<ButtonProps> = ({ onStart, onEnd }) => {
       setStarted(true);
     } else {
       onEnd();
-      setStarted(false)
+      setStarted(false);
     }
   };
 
-  return <button onClick={handleClick}>{!started ? 'Commencer' : 'Cliquer quand vous voulez !'}</button>;
+  return (
+    <button className={started ? 'clickButton' : 'startButton'} onClick={handleClick}>
+      {!started ? 'Commencer' : 'Arreter quand vous voulez !'}
+    </button>
+  );
 };
 
 export default Button;

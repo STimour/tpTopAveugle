@@ -22,9 +22,9 @@ const Button: React.FC<ButtonProps> = ({ onStart, onEnd }) => {
   return (
     <div>
       {!started ? (
-        <button onClick={handleStartClick}>Start</button>
+        <button className="startButton"  onClick={handleStartClick}>Start</button>
       ) : (
-        <button onClick={handleEndClick}>End</button>
+        <button className="clickButton" onClick={handleEndClick}>End</button>
       )}
     </div>
   );

@@ -34,8 +34,7 @@ function App() {
   return (
     <div className="App">
       <Timer numberAleat={targerTime}/>
-      <h1>{startTime !== undefined ? startTime?.toLocaleTimeString() : 0}</h1>
-      <h1>{endTime.toLocaleTimeString()}</h1>
+      <h1>Début à : {startTime !== undefined ? startTime?.toLocaleTimeString() : 0}</h1>
       <Result numberAleat={targerTime} timeToWin={timeToWin}/>
       <Button onStart={()=> handleStart()} onEnd={() => handleButtonClick}/>
     </div>

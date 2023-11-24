@@ -9,21 +9,26 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ onStart, onEnd }) => {
   const [started, setStarted] = useState(false);
 
-  const handleClick = () => {
-    if (!started) {
-      onStart();
-      setStarted(true);
-    } else {
-      onEnd();
-      setStarted(false);
-    }
+  const handleStartClick = () => {
+    onStart();
+    setStarted(true);
+  };
+
+  const handleEndClick = () => {
+    onEnd();
+    setStarted(false);
   };
 
   return (
-    <button className={started ? 'clickButton' : 'startButton'} onClick={handleClick}>
-      {!started ? 'Commencer' : 'Arreter quand vous voulez !'}
-    </button>
+    <div>
+      {!started ? (
+        <button onClick={handleStartClick}>Start</button>
+      ) : (
+        <button onClick={handleEndClick}>End</button>
+      )}
+    </div>
   );
 };
 
 export default Button;
+

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Timer from './components/Timer'
 import Button from './components/Button' 
-import Result from './Componant/Result'
+import Result from './components/Display'
 
 
 

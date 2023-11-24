@@ -10,12 +10,9 @@ const Timer = (props: AleatTimer) => {
 
     return (
         <div className="timer">
-
             <p>
                Estimez : {numberAleat}
             </p>
-        
-
         </div>
     )
 

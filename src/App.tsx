@@ -7,13 +7,14 @@ import Result from './Componant/Result'
 import './App.css';
 
 function App() {
-  const [startTime, setStartTime] = useState("");
+  const [startTime, setStartTime] = useState(Number);
+  
   const [endTime, setEndTime] = useState<Date>(new Date());
 
   const targerTime = Math.floor(Math.random() * 6) + 10; 
   
   const handleStart = () => {
-    const stringStartTime = ((new Date).getTime()).toString()
+    const stringStartTime = ((new Date).getTime())
     setStartTime(stringStartTime);
   };
 
@@ -29,9 +30,9 @@ function App() {
   return (
     <div className="App">
       <Timer numberAleat={targerTime}/>
-      <Result winNumber={timeToWin}/>
-      <Button onStart={()=> handleStart()} onClick={() => handleButtonClick}/>
       <h1>{startTime}</h1>
+      <Result winNumber={timeToWin}/>
+      <Button onStart={()=> handleStart()} onEnd={() => handleButtonClick}/>
     </div>
   );
 }

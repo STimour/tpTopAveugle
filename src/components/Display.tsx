@@ -1,6 +1,6 @@
 type Resultat = {
     numberAleat: number,
-    timeToWin: number
+    timeToWin: string
 }
 
 const Display = (props: Resultat) => {
@@ -9,7 +9,7 @@ const Display = (props: Resultat) => {
     return (
         <div className="affichage">
             <p>Objectif : {numberAleat}</p>
-            <p>Resultat : {timeToWin}</p>
+            <p>Resultat attendu: {timeToWin}</p>
         </div>
     );
 };

@@ -12,21 +12,23 @@ function App() {
 
   const [targerTime, setTargetTime] = useState(Math.floor(Math.random() * 16) + 5)
 
+  const [timeToWin, setTimeToWin] = useState('')
+
   const handleStart = () => {
     setStartTime(new Date());
+    setTimeToWin(new Date(Number(startTime) + targerTime * 1000).toLocaleTimeString())
   };
 
   const handleButtonClick = () => {
       setEndTime(new Date());
   };
 
-  const timeToWin = Number(startTime) + targerTime
+  
 
   return (
     <div className="App">
       <Timer numberAleat={targerTime}/>
-      <h1>{startTime !== undefined ? startTime?.toLocaleTimeString() : 0}</h1>
-      <h1>{endTime.toLocaleTimeString()}</h1>
+      <h1>Début à : {startTime !== undefined ? startTime?.toLocaleTimeString() : 0}</h1>
       <Result numberAleat={targerTime} timeToWin={timeToWin}/>
       <Button onStart={()=> handleStart()} onEnd={() => handleButtonClick}/>
     </div>

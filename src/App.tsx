@@ -24,7 +24,7 @@ function App() {
 
   const handleButtonClick = () => {
       setEndTime(new Date());
-      setStartTime(0)
+      setStartTime(null)
   };
 
   const timeToWin = Number(startTime) + targerTime
@@ -34,7 +34,7 @@ function App() {
       <Timer numberAleat={targerTime}/>
       <h1>{startTime !== undefined ? startTime?.toLocaleTimeString() : 0}</h1>
       <h1>{endTime.toLocaleTimeString()}</h1>
-      <Result winNumber={timeToWin}/>
+      <Result numberAleat={targerTime} timeToWin={timeToWin}/>
       <Button onStart={()=> handleStart()} onEnd={() => handleButtonClick}/>
     </div>
   );

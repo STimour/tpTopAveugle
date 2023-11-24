@@ -3,9 +3,6 @@ import Timer from './components/Timer'
 import Button from './components/Button' 
 import Result from './components/Display'
 
-
-
-
 import './App.css';
 
 function App() {
@@ -13,17 +10,14 @@ function App() {
   
   const [endTime, setEndTime] = useState<Date>(new Date());
 
-  const [targerTime, setTargetTime] = useState(Number)
+  const [targerTime, setTargetTime] = useState(Math.floor(Math.random() * 16) + 5)
 
   const handleStart = () => {
     setStartTime(new Date());
-    const nombreAleat = Math.floor(Math.random() * 16) + 5;
-    setTargetTime(nombreAleat)
   };
 
   const handleButtonClick = () => {
       setEndTime(new Date());
-      setStartTime(null)
   };
 
   const timeToWin = Number(startTime) + targerTime

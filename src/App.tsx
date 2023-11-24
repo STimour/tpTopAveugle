@@ -4,6 +4,8 @@ import Button from './components/Button'
 import Result from './Componant/Result'
 
 
+
+
 import './App.css';
 
 function App() {
@@ -26,7 +28,6 @@ function App() {
   };
 
   const timeToWin = Number(startTime) + targerTime
-
 
   return (
     <div className="App">
